@@ -3,7 +3,7 @@ title: 基于 Dify + DeepSeek 构建本地化 AI 知识库系统
 date: 2026-01-20 08:22:21
 tags: [AI]
 categories: [AI]
-cover: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696e0be10db1f.png
+cover: /img/covers/dify-deepseek.png
 abbrlink: Dify + DeepSeek
 ---
 **项目背景**：旨在通过 Docker 容器化技术在本地部署 LLM 应用开发平台 Dify，并接入当前最流行的 DeepSeek 模型，实现一个完整的 AI 聊天助手。 **环境**：Windows / Linux (Docker 环境)
@@ -127,7 +127,7 @@ _适合电脑配置一般，或者追求满血版 DeepSeek-V3 效果的场景。
         
     - 直接粘贴 Key。
 
-[成果图](http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696dd5da04969.png)
+![成果图](/img/posts/dify-result.png)
 
 
 ## 第五章：技术总结与踩坑记录

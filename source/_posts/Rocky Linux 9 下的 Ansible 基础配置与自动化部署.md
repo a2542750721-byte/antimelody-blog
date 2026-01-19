@@ -3,7 +3,7 @@ title: Rocky Linux 9 下的 Ansible 基础配置与自动化部署
 date: 2026-01-19 18:35:30
 tags: [Linux]
 categories: [Linux]
-cover: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696e0a93dc44c.jpg
+cover: /img/covers/ansible.jpg
 abbrlink: Anisible
 ---
 **项目目标**：在 Minimal 环境下，实现 **Servera (主控)** 对 **Serverb (被控)** 的免密管理，并通过 Playbook 完成用户创建与文件分发。

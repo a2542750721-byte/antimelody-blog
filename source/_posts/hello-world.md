@@ -3,7 +3,7 @@ title: Hello World
 date: 2026-01-19 01:18:47
 tags: [Test]
 categories: [Test]
-cover: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696d169c944fd.jpg
+cover: /img/covers/hello-world.jpg
 abbrlink: Hello World
 ---
 

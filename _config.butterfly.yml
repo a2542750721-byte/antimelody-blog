@@ -1,8 +1,8 @@
 # Butterfly 主题配置文件
 # https://butterfly.js.org/
 
-# 首页背景图
-index_img: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696d14f352e39.jpg
+# 首页背景图（已迁移到本地，解决 HTTPS 证书问题）
+index_img: /img/covers/background.jpg
 
 # 默认深浅模式 (light, dark, auto)
 display_mode: dark
@@ -139,7 +139,7 @@ aside:
       name: Follow Me
       link: https://github.com/xxxx
       icon: fa-brands fa-github
-    avatar: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696d14f352e39.jpg
+    avatar: /img/covers/background.jpg  # 使用相同的背景图作为头像
     # 自定义社交双按钮
     social:
       AI助手: /# || fa-solid fa-robot

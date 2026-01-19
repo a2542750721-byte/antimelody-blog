@@ -1,0 +1,60 @@
+/* 魔法右键菜单 */
+#rightMenu {
+    display: none;
+    position: fixed;
+    width: 160px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 9999;
+    padding: 8px 0;
+    user-select: none;
+    transform-origin: top left;
+}
+
+[data-theme='dark'] #rightMenu {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.5);
+}
+
+#rightMenu .menu-item {
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+[data-theme='dark'] #rightMenu .menu-item {
+    color: #eee;
+}
+
+#rightMenu .menu-item:hover {
+    background: #425AEF;
+    color: #fff !important;
+}
+
+#rightMenu .menu-item i {
+    width: 20px;
+    margin-right: 8px;
+    text-align: center;
+}
+
+#rightMenu hr {
+    margin: 6px 16px;
+    border: none;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] #rightMenu hr {
+    background: rgba(255, 255, 255, 0.1);
+}

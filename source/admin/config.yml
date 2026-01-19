@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: your-username/your-repo # 替换为你的 GitHub 仓库（格式：用户名/项目名）
+  branch: main
+  base_url: https://your-site.vercel.app # 替换为你的 Vercel 域名（用于 OAuth 认证）
+
+# 媒体文件配置
+# Decap CMS 需要 media_folder 存在，我们统一存放在 source/uploads
+media_folder: "source/uploads"
+public_folder: "/uploads"
+
+# 集合配置
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "source/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "日期", name: "date", widget: "datetime"}
+      - {label: "封面图 (输入外部链接)", name: "cover", widget: "string", required: false}
+      - {label: "永久链接后缀", name: "abbrlink", widget: "hidden", default: "auto"}
+      - {label: "标签", name: "tags", widget: "list", required: false}
+      - {label: "分类", name: "categories", widget: "list", required: false}
+      - {label: "内容", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "页面"
+    files:
+      - label: "关于页"
+        name: "about"
+        file: "source/about/index.md"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "内容", name: "body", widget: "markdown"}

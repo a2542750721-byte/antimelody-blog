@@ -1,0 +1,185 @@
+# Butterfly 主题配置文件
+# https://butterfly.js.org/
+
+# 首页背景图
+index_img: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696d14f352e39.jpg
+
+# 默认深浅模式 (light, dark, auto)
+display_mode: dark
+
+# 导航菜单
+menu:
+  首页: / || fa-solid fa-home
+  归档: /archives/ || fa-solid fa-archive
+  标签: /tags/ || fa-solid fa-tags
+  分类: /categories/ || fa-solid fa-folder-open
+  清单:
+    音乐: /music/ || fa-solid fa-music
+    电影: /movies/ || fa-solid fa-video
+  关于: /about/ || fa-solid fa-heart
+
+# 网站背景
+background: "#000000"
+
+# 社交链接
+# 社交链接 (已移动到 card_author 下)
+# social:
+#   github: https://github.com/xxxx || fa-brands fa-github
+#   email: mailto:xxxx@gmail.com || fa-solid fa-envelope
+#   rss: /atom.xml || fa-solid fa-rss
+
+# 评论系统
+# --------------------------------------
+comments:
+  use:
+    - Giscus
+  lazyload: true
+  count: true
+  card_post: false
+
+giscus:
+  repo: # 你的仓库名
+  repo_id: 
+  category: Announcements
+  category_id: 
+  mapping: pathname
+  strict: 1
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: light # 浅色主题
+  lang: zh-CN
+  loading: lazy
+
+framework_info: true
+
+# 显示文章元数据 (作者、日期、分类等)
+post_meta:
+  page:
+    date_type: both
+    date_format: relative
+    categories: true
+    tags: true
+    label: true
+  post:
+    date_type: both
+    date_format: relative
+    categories: true
+    tags: true
+    label: true
+
+# 代码相关配置
+highlight_theme: mac
+highlight_copy: true
+highlight_lang: true
+highlight_shrink: false
+highlight_height_limit: false # 单位: px
+code_word_wrap: true
+
+# 阅读模式
+readmode: true
+
+# 搜索系统
+search:
+  use: local_search
+  
+local_search:
+  enable: true
+  preload: true
+  CDN: 
+  top_n_per_article: 1
+  unescape: false
+  hyphenate: false
+
+# 懒加载配置
+lazyload:
+  enable: true
+  field: site # site/post
+  placeholder: /img/loading.gif
+
+# 加载动画
+preloader:
+  enable: true
+  source: 1
+
+# PWA (渐进式 Web 应用)
+pwa:
+  enable: false
+
+# 字数统计
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 不蒜子访问统计
+busuanzi:
+  site_uv: true
+  site_pv: true
+  page_pv: true
+
+# 侧边栏设置
+# --------------------------------------
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: 分享设计与科技生活
+    button:
+      enable: false # 禁用默认按钮，使用下方 social 模拟双按钮
+      name: Follow Me
+      link: https://github.com/xxxx
+      icon: fa-brands fa-github
+    avatar: http://youke.xn--y7xa690gmna.cn/s1/2026/01/19/696d14f352e39.jpg
+    # 自定义社交双按钮
+    social:
+      AI助手: /# || fa-solid fa-robot
+      Github: https://github.com/a2542750721-byte || fa-brands fa-github
+  card_announcement:
+    enable: false
+    content: 欢迎来到我的博客！
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort_by: date
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMM YYYY
+    order: -1
+    limit: 8
+
+# 注入自定义内容
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/rightmenu.css">
+  bottom:
+    - <script src="https://instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipfGWE9P7S35at8S1T+O3d6Ieu4j66H7rPscPBy8F4V11W4m9A6fllV8"></script>
+    - <script src="/js/greeting.js"></script>
+    - <script src="/js/border-effect.js"></script>
+    - <script src="/js/rightmenu.js"></script>
+    - <script src="/js/nav-dynamic.js"></script>
+
+# 资源 CDN 配置
+
+# 资源 CDN 配置
+# 如果你想使用其他 CDN 服务
+# publicPath: https://cdn.jsdelivr.net/gh/user/repo@latest/

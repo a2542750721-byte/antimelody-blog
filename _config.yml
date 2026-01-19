@@ -1,0 +1,147 @@
+# Hexo 配置文件
+## 文档: https://hexo.io/docs/conf.html
+## 源码: https://github.com/hexojs/hexo/
+
+# 站点信息
+title: ANTIMelody's Blogs
+subtitle: 'Code, Life, and Everything'
+description: ''
+keywords:
+author: ANTIMelody
+language: zh-CN
+timezone: Asia/Shanghai
+
+# 网址配置
+## 如果你使用自定义域名，请在这里设置。例如 'https://username.github.io/project'
+url: http://example.com
+permalink: posts/:abbrlink.html
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# 永久链接插件配置 (abbrlink)
+abbrlink:
+  alg: crc32
+  rep: hex
+  drafts: false
+  # 为站点地图生成分类和标签
+  auto_category:
+    enable: true
+  auto_tag:
+    enable: true
+  auto_title:
+    enable: false
+  auto_date:
+    enable: false
+
+# 目录配置
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - 'admin/*' # 重要：跳过渲染 Decap CMS 目录
+
+# 写作配置
+new_post_name: :title.md # 新文章的文件名格式
+default_layout: post     # 默认布局
+titlecase: false         # 是否将标题转换为首字母大写
+external_link:
+  enable: true           # 是否在新标签页打开外部链接
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  enable: false
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# 首页设置
+# path: 博客首页的根路径 (默认为 '')
+# per_page: 每页显示的文章数 (0 表示禁用分页)
+# order_by: 文章排序方式 (默认按日期倒序排列)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# 分类与标签
+default_category: uncategorized
+category_map:
+tag_map:
+
+# 元数据元素
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# 日期 / 时间格式
+## Hexo 使用 Moment.js 来解析和显示日期
+## https://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option 支持 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# 分页配置
+## 设置为 0 表示禁用分页
+per_page: 10
+pagination_dir: page
+
+# 包含 / 排除文件
+## include:/exclude: 选项仅适用于 'source/' 文件夹
+include:
+exclude:
+ignore:
+
+# 扩展插件
+## 插件: https://hexo.io/plugins/
+theme: butterfly
+
+# 部署配置
+## 文档: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: 
+    # github: git@github.com:username/repo.git,main
+  branch: main
+
+# 站点地图
+sitemap:
+  path: sitemap.xml
+
+# RSS 订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
+# 外链优化 (Nofollow)
+nofollow:
+  enable: true
+  exclude:
+    - example.com
+    - localhost

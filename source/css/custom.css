@@ -27,12 +27,12 @@ body {
 }
 
 /* ==========================================================================
-   Dual-Capsule Navigation System
+   Simplified Navigation - Always at Top (No Dual-Capsule)
    ========================================================================== */
 
 #nav {
-    will-change: transform, opacity, background-color, backdrop-filter;
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+    will-change: transform, opacity;
+    transition: all 0.3s ease !important;
     border: none !important;
     box-shadow: none !important;
     display: flex !important;
@@ -46,153 +46,26 @@ body {
     padding: 10px 30px !important;
     background: transparent !important;
     border-bottom: none !important;
-}
-
-/* 初始状态：一体化透明 */
-#nav:not(.nav-fixed) {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    width: 100% !important;
 }
 
+/* Remove all nav-fixed related styles - no longer needed */
 
-#nav:not(.nav-fixed) #blog-info,
-#nav:not(.nav-fixed) #menus {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
+/* ==========================================================================
+   Mobile Responsive: Hide Navigation Completely
+   ========================================================================== */
 
-/* 轨道自适应优化 */
-#nav #blog-info {
-    flex: 0 1 auto !important;
-}
+@media screen and (max-width: 768px) {
+    #nav {
+        display: none !important;
+    }
 
-#nav #menus {
-    flex: 0 1 auto !important;
-}
-
-/* 滚动状态：分裂成两个胶囊 */
-#nav.nav-fixed {
-    top: 10px !important;
-    padding: 0 40px !important;
-    max-width: 1400px;
-    margin: 0 auto !important;
-}
-
-
-/* Logo 胶囊 */
-#nav.nav-fixed #blog-info {
-    display: flex !important;
-    align-items: center;
-    padding: 10px 24px !important;
-    height: 50px;
-    width: max-content !important;
-
-    /* 毛玻璃效果 */
-    background: rgba(255, 255, 255, 0.75) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-
-    /* 极细边框 + 高圆角 */
-    border: 0.5px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 30px !important;
-
-    /* 阴影 */
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
-}
-
-
-[data-theme='dark'] #nav.nav-fixed #blog-info {
-    background: rgba(20, 20, 20, 0.75) !important;
-    border: 0.5px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-}
-
-/* Logo 文字样式 */
-#nav.nav-fixed #blog-info .site-name {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-}
-
-/* 菜单胶囊 */
-#nav.nav-fixed #menus {
-    display: flex !important;
-    align-items: center;
-    padding: 8px 20px !important;
-    height: 50px;
-
-    /* 毛玻璃效果 */
-    background: rgba(255, 255, 255, 0.75) !important;
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-
-    /* 极细边框 + 高圆角 */
-    border: 0.5px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 30px !important;
-
-    /* 阴影 */
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-
-    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
-}
-
-
-[data-theme='dark'] #nav.nav-fixed #menus {
-    background: rgba(20, 20, 20, 0.75) !important;
-    border: 0.5px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-}
-
-/* 菜单项布局优化 */
-#nav.nav-fixed .menus_items {
-    display: flex;
-    gap: 8px;
-}
-
-#nav.nav-fixed .menus_item {
-    padding: 0 !important;
-}
-
-#nav.nav-fixed .menus_item a {
-    padding: 8px 14px !important;
-    font-size: 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-#nav.nav-fixed .menus_item a:hover {
-    background: rgba(66, 90, 239, 0.1) !important;
-    color: var(--heo-theme) !important;
-}
-
-/* 搜索按钮 */
-#nav.nav-fixed #search-button {
-    margin-right: 10px;
-}
-
-#nav.nav-fixed #search-button a {
-    padding: 8px 14px !important;
-    font-size: 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-#nav.nav-fixed #search-button a:hover {
-    background: rgba(66, 90, 239, 0.1) !important;
-    color: var(--heo-theme) !important;
-}
-
-/* 隐藏移动端菜单按钮 */
-#nav.nav-fixed #toggle-menu {
-    display: none !important;
+    /* 移除顶部间距以避免空白 */
+    #page-header,
+    #web_bg {
+        padding-top: 0 !important;
+    }
 }
 
 /* ==========================================================================
